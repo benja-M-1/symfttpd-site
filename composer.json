@@ -1,0 +1,44 @@
+{
+    "authors": [
+        {
+            "name": "Benjamin Grandfond",
+            "email": "benjamin.grandfond@gmail.com",
+            "homepage": "http://benjamingrandfond.fr"
+        }
+    ],
+    "require": {
+        "silex/silex": "dev-master",
+        "monolog/monolog": "dev-master",
+        "twig/twig": ">=1.8, <2.0",
+        "symfony/config": "dev-master",
+        "symfony/yaml": "dev-master",
+        "symfony/translation": "dev-master",
+        "symfony/twig-bridge": "dev-master",
+        "symfttpd/symfttpd": "dev-master",
+        "dflydev/markdown": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "version": "master",
+                "name": "symfttpd/symfttpd",
+                "source": {
+                    "url": "https://benja-M-1@github.com/benja-M-1/symfttpd.git",
+                    "type": "git",
+                    "reference": "2.0.0"
+                },
+                "autoload": {
+                    "psr-0": {
+                        "Symfttpd": "lib/"
+                    }
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Symfttpd": "src/"
+        }
+    }
+}
