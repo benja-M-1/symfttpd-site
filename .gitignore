@@ -1,0 +1,13 @@
+# Project files
+cache
+log
+vendor
+
+# -----------------
+# IDES
+.idea
+nbproject
+
+# Mac os files
+.DS_Store
+*/.DS_Store
