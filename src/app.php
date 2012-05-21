@@ -86,16 +86,17 @@ $app->get('/download/symfttpd.phar', function () use ($app) {
         $compiler->compile();
     }
 
-    $response = new Response(readfile($phar));
-    $response->setStatusCode(200);
-    $response->headers->set('Content-Type', 'Content-Type: text/plain; charset=utf-8');
-    $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($phar).'"');
-    $response->headers->set('X-LIGHTTPD-send-file', $phar);
-    $response->headers->set('X-Sendfile', $phar);
-    $response->headers->set('Content-Transfer-Encoding', 'binary');
-    $response->headers->set('Content-Length', filesize($phar));
-    $response->headers->set('Connection', 'keep-alive');
-    $response->sendContent();
+    $stream = function () use ($phar) {
+        readfile($phar);
+    };
+
+
+    $headers = array(
+        'Content-Type' => 'application/octet-stream',
+        'Content-Transfer-Encoding' => 'binary'
+    );
+
+    $response = $app->stream($stream, 200, $headers);
 
     return $response;
 })
