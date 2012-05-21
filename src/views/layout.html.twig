@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Symfttpd - php webserver wrapper</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Symfttpd is a webserver wrapper for your php project.">
+    <meta name="keywords" content="symfony, php, server, apache, lighttpd, nginx, webserver, spawn, genconf">
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/css/symfttpd.css">
+</head>
+<body>
+
+{% include 'menu.html.twig' %}
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

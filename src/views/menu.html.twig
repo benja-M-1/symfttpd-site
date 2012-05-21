@@ -1,0 +1,15 @@
+{% from "macros.html.twig" import menu_item %}
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li {% if app.request.attributes.get('_route') == 'homepage' %}class="active"{% endif %}>
+                    <a class="brand" href="/">Symfttpd</a>
+                </li>
+                {{ menu_item('documentation', path('documentation'), app.request.attributes.get('_route') == 'documentation') }}
+                {{ menu_item('Github', app.parameters.github_url, false) }}
+            </ul>
+        </div>
+    </div>
+</div>

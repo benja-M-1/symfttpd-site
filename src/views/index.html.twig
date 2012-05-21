@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="hero-unit mainhead">
+    <h1>Symfttpd, php webserver wrapper.</h1>
+
+    <p>
+        <br/>
+        Bothered to configure your webserver when starting a new project?
+        <br/>
+        Cannot stand having a webserver running even when you don't need it?
+        <br/>
+        <br/>
+        <strong>Symfttpd is for you.</strong>
+    </p>
+
+    <p>
+        <a href="{{ path('download') }}" class="btn btn-primary btn-large">
+            <strong>{{ 'download_phar'|trans }}</strong> ({{ app.parameters.symfttpd.version }})
+        </a>
+        <a class="btn btn-large" href="{{ app.parameters.github_url }}">
+            <strong>{{ 'view_on_github'|trans }}</strong>
+        </a>
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% macro menu_item(label, url, current) %}
+    <li class="{% if current %} active{% endif %}">
+        <a{% if url %} href="{{ url }}"{% endif %}>{{ label|trans }}</a>
+    </li>
+{% endmacro %}
